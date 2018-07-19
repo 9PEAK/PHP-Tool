@@ -53,5 +53,4 @@ abstract class Str {
         return strtolower(preg_replace('/([a-z])([A-Z])/', "$1" . $separator . "$2", $str));
     }
 
-
 }
