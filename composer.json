@@ -17,5 +17,7 @@
         "psr-4": {
             "Peak\\Tool\\": "src"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": false
 }
