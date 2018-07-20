@@ -81,4 +81,14 @@ abstract class Arr {
 	}
 
 
+	static function flip (array $arr, $default=null)
+	{
+		$arr = array_flip($arr);
+		foreach ($arr as &$val ) {
+			$val = $default;
+		}
+		return $arr;
+	}
+
+
 }
