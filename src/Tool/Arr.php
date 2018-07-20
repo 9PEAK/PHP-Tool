@@ -81,6 +81,10 @@ abstract class Arr {
 	}
 
 
+	/**
+	 * flip array, and set each item as a default value（翻转数组，并给每个元素设置初始值。）
+	 *
+	 * */
 	static function flip (array $arr, $default=null)
 	{
 		$arr = array_flip($arr);
