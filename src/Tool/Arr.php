@@ -59,6 +59,12 @@ abstract class Arr {
 
 
 
+	/**
+	 * array to object or object to array (数组和对象类型转换)
+	 * @param $dat
+	 * @param $to string, object or array, the result type
+	 * @param $recursive boolean, if convert data recursively
+	 * */
 	static function convert ($dat, $to='object', $recursive=false)
 	{
 		if (is_array($dat)||is_object($dat)) {
