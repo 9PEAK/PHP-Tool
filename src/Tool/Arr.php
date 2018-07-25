@@ -82,6 +82,22 @@ abstract class Arr {
 
 
 	/**
+	 * 将数组里的元素转化为utf8
+	 * 深度转化，递归至最深层次的数组元素
+	 * */
+	static function utf8 (array &$arr) {
+		foreach ( $arr as &$v ) {
+			if (is_array($v)) {
+				$func = __FUNCTION__;
+				self::$func($v);
+			} else {
+				$v = mb_convert_encoding($v, 'UTF-8', 'Windows-1252');
+			}
+		}
+		return $arr;
+	}
+
+	/**
 	 * flip array, and set each item as a default value（翻转数组，并给每个元素设置初始值。）
 	 *
 	 * */
