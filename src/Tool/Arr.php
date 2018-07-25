@@ -26,7 +26,7 @@ abstract class Arr {
 	/**
 	 *
 	 * */
-	static function reset_key (array $arr, $type, $recursive=true)
+	static function reset_key (array $arr, $type, $recursive=true, $glue='_')
 	{
 		/*
 		switch ($type) {
@@ -51,7 +51,7 @@ abstract class Arr {
 		$func = 'case'.ucfirst(strtolower($type));
 		foreach ($arr as $key=>$val) {
 			unset ($arr[$key]);
-			$arr[Str::$func($key)] = is_array($val)&&$recursive ? self::{__FUNCTION__}($val, $type, true) : $val;
+			$arr[Str::$func($key, $glue)] = is_array($val)&&$recursive ? self::{__FUNCTION__}($val, $type, true, $glue) : $val;
 		}
 
 		return $arr;
