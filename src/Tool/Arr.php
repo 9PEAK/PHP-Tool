@@ -111,4 +111,21 @@ abstract class Arr {
 	}
 
 
+	/**
+	 * 数组取交集（格式化）
+	 * @param $tpl 格式化的模板
+	 * @param $dat 要格式化的数据
+	 * @param $default 是否$tpl中的值作为作为默认值
+	 * */
+	static function intersectKey (array $tpl, array $dat, $default=false)
+	{
+		$dat = array_intersect_key($dat, $tpl);
+		return $default ? array_merge($tpl, $dat) : $dat;
+	}
+
+
+
+
+
+
 }
