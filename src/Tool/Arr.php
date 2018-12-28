@@ -124,7 +124,24 @@ abstract class Arr {
 	}
 
 
+	/**
+	 * 结合数组的key和value
+	 * @param $dat 待处理的数组数据
+	 * */
+	static function joinKeyVal (array $dat, $unitGlue='=')
+	{
+		foreach ($dat as $key=>&$val) {
+			$val = $key.$unitGlue.$val;
+		}
+		return $dat;
+	}
 
+
+	static function joinKeyValToString (array $dat, $unitGlue='=', $groupGlue='&')
+	{
+		$dat = self::joinKeyVal($dat, $unitGlue);
+		return join($groupGlue, $dat);
+	}
 
 
 
